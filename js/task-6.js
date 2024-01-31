@@ -20,23 +20,23 @@ createButton.addEventListener("click", () => {
 destroyButton.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
-  boxesDiv.innerHTML = "";
+boxesDiv.innerHTML = "";
 
-  let initialBoxSize = 30;
-  let boxSizeIncrement = 10;
-  let size = 30;
-  for (let i = 0; i < amount; i++) {
-    const box = document.createElement("div");
-    box.classList.add("box");
-    box.style.width = `${initialBoxSize}px`;
-    box.style.height = `${initialBoxSize}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    boxesDiv.appendChild(box);
+const initialBoxSize = 30;
+const boxSizeIncrement = 10;
 
-    initialBoxSize += boxSizeIncrement;
-  }
+for (let i = 0; i < amount; i++) {
+const box = document.createElement("div");
+box.classList.add("box");
+const size = initialBoxSize + i * boxSizeIncrement;
+box.style.width = `${size}px`;
+box.style.height = `${size}px`;
+box.style.backgroundColor = getRandomHexColor();
+boxesDiv.appendChild(box);
+}
 }
 
 function destroyBoxes() {
   boxesDiv.innerHTML = "";
 }
+

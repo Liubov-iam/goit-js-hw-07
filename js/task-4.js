@@ -13,5 +13,7 @@ function submitHandler(event) {
     email: email.trim(),
     password: password.trim(),
   };
-  console.log(trimmedValues);
+    
+    console.log(trimmedValues);
+    loginForm.reset();
 }
